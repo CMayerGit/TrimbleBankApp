@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{43B01C42-BE9A-4F08-BFEB-82681EE4A672}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TrimbleBank</RootNamespace>
+    <AssemblyName>TrimbleBank</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>5</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=2.0.2.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.2.0.2\lib\net471\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\SignatureManager.cs" />
+    <Compile Include="Classes\SqlStatement.cs" />
+    <Compile Include="Data\DBPlugIns\TrimbleBankDbPluginSQLite.cs" />
+    <Compile Include="Data\DBPlugIns\TrimbleBankDbPluginSqlServer.cs" />
+    <Compile Include="Data\TrimbleBankDb.cs" />
+    <Compile Include="Data\TrimbleBankDbPlugin.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Account\FormAccountEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Account\FormAccountEdit.Designer.cs">
+      <DependentUpon>FormAccountEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Account\FormAccountManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Account\FormAccountManager.Designer.cs">
+      <DependentUpon>FormAccountManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customer\FormCustomerEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customer\FormCustomerEdit.Designer.cs">
+      <DependentUpon>FormCustomerEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customer\FormCustomerManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customer\FormCustomerManager.Designer.cs">
+      <DependentUpon>FormCustomerManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customer\FormSelectCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customer\FormSelectCustomer.Designer.cs">
+      <DependentUpon>FormSelectCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDataBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDataBase.Designer.cs">
+      <DependentUpon>FormDataBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transaction\FormCreateTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Transaction\FormCreateTransaction.Designer.cs">
+      <DependentUpon>FormCreateTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\Account\UcAccountEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Account\UcAccountEdit.Designer.cs">
+      <DependentUpon>UcAccountEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Account\UcAccountManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Account\UcAccountManager.Designer.cs">
+      <DependentUpon>UcAccountManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Account\UcAccountList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Account\UcAccountList.Designer.cs">
+      <DependentUpon>UcAccountList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Account\UcAccountTransaction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Account\UcAccountTransaction.Designer.cs">
+      <DependentUpon>UcAccountTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Customer\UcCustomerEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Customer\UcCustomerEdit.Designer.cs">
+      <DependentUpon>UcCustomerEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Customer\UcCustomerList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Customer\UcCustomerList.Designer.cs">
+      <DependentUpon>UcCustomerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Customer\UcCustomerManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Customer\UcCustomerManager.Designer.cs">
+      <DependentUpon>UcCustomerManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Transaction\UcTransactionEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Transaction\UcTransactionEdit.Designer.cs">
+      <DependentUpon>UcTransactionEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Transaction\UcTransactionList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Transaction\UcTransactionList.Designer.cs">
+      <DependentUpon>UcTransactionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UcDataBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcDataBase.Designer.cs">
+      <DependentUpon>UcDataBase.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Account\FormAccountEdit.resx">
+      <DependentUpon>FormAccountEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Account\FormAccountManager.resx">
+      <DependentUpon>FormAccountManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Customer\FormCustomerEdit.resx">
+      <DependentUpon>FormCustomerEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Customer\FormCustomerManager.resx">
+      <DependentUpon>FormCustomerManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Customer\FormSelectCustomer.resx">
+      <DependentUpon>FormSelectCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDataBase.resx">
+      <DependentUpon>FormDataBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Transaction\FormCreateTransaction.resx">
+      <DependentUpon>FormCreateTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserControls\Account\UcAccountEdit.resx">
+      <DependentUpon>UcAccountEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Account\UcAccountManager.resx">
+      <DependentUpon>UcAccountManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Account\UcAccountList.resx">
+      <DependentUpon>UcAccountList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Account\UcAccountTransaction.resx">
+      <DependentUpon>UcAccountTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Customer\UcCustomerEdit.resx">
+      <DependentUpon>UcCustomerEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Customer\UcCustomerList.resx">
+      <DependentUpon>UcCustomerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Customer\UcCustomerManager.resx">
+      <DependentUpon>UcCustomerManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Transaction\UcTransactionEdit.resx">
+      <DependentUpon>UcTransactionEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Transaction\UcTransactionList.resx">
+      <DependentUpon>UcTransactionList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcDataBase.resx">
+      <DependentUpon>UcDataBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
